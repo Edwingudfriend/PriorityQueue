@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Triage Priority Queue</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<div class="container">
+    <h1>Hospital Triage System</h1>
+
+    <section>
+        <h2>Add New Patient</h2>
+        <form id="patientForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="symptoms">Symptoms:</label>
+                <textarea id="symptoms" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="priority">Priority:</label>
+                <select id="priority" required>
+                    <option value="IMMEDIATE">Immediate (Life-threatening)</option>
+                    <option value="URGENT">Urgent (Serious but stable)</option>
+                    <option value="STANDARD" selected>Standard (Non-critical)</option>
+                    <option value="NON_URGENT">Non-urgent</option>
+                </select>
+            </div>
+
+            <button type="submit">Add Patient</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Patient Queue</h2>
+        <button id="nextPatientBtn">Process Next Patient</button>
+        <div id="patientList"></div>
+    </section>
+</div>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
